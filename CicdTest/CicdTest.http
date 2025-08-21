@@ -1,0 +1,11 @@
+@CicdTest_HostAddress = http://localhost:5266
+
+GET {{CicdTest_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{CicdTest_HostAddress}}/todos/1
+Accept: application/json
+
+###
