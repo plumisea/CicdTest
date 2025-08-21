@@ -2,9 +2,9 @@ name: .NET Build & Test
 
 on:
   push:
-    branches: [ "main" ]   # 当推送到 main 分支时运行
+    branches: [ "master" ]   # 当推送到 main 分支时运行
   pull_request:
-    branches: [ "main" ]   # 当有人提 PR 时运行
+    branches: [ "master" ]   # 当有人提 PR 时运行
 
 jobs:
   build:
