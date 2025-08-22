@@ -29,6 +29,15 @@ todosApi.MapPost("/", (Todo todo) =>
     return Results.Created($"/todos/{todo.Id}", todo);
 });
 
+todosApi.MapPut("/{id}", (int id, Todo todo) =>
+{
+    if (todo.Id != id)
+    {
+        return Results.BadRequest("Todo ID mismatch.");
+    }
+    return Results.Ok(todo);
+});
+
 app.Run();
 
 public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
