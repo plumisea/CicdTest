@@ -38,6 +38,13 @@ todosApi.MapPut("/{id}", (int id, Todo todo) =>
     return Results.Ok(todo);
 });
 
+
+todosApi.MapDelete("/{id}", (int id) =>
+{
+
+    return Results.NoContent();
+});
+
 app.Run();
 
 public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
