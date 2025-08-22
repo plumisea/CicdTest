@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t yourname/myapp:latest .
+        run: docker build -t plumsea/cicdtest:latest .
 
       - name: Push Docker image
-        run: docker push yourname/myapp:latest
+        run: docker push plumsea/cicdtest:latest
