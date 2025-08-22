@@ -24,6 +24,11 @@ todosApi.MapGet("/{id}", (int id) =>
         ? Results.Ok(todo)
         : Results.NotFound());
 
+todosApi.MapPost("/", (Todo todo) =>
+{
+    return Results.Created($"/todos/{todo.Id}", todo);
+});
+
 app.Run();
 
 public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
